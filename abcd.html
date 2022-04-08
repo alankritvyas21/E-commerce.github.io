@@ -1,0 +1,910 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Zippit</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="css/accountbtn.css"/>
+    <style>
+        #navigation {
+            
+          background:rgb(19, 9, 56);
+        }
+        #header {
+          background: url(../img/abcd.jpg); 
+            
+        }
+        #top-header {
+          background-color: black;
+        }
+        #footer {
+           background-color:black;
+        }
+        #bottom-footer {
+            color: white;
+        }
+        .footer-links li a {
+         color: white;
+        }
+        
+        .glyphicon{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    .glyphicon-chevron-left:before{
+        content:"\f053"
+    }
+    .glyphicon-chevron-right:before{
+        content:"\f054"
+    }
+
+        </style>
+
+    </head>
+	<body>
+
+		<header>
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="#" class="logo">
+								<font style="font-style:normal; font-size: 33px;color: aliceblue;font-family: serif">
+                                       Zippit
+                                    </font>
+                                    <br>
+                                    <font style="font-style:normal; font-size: 20px;color: aliceblue;font-family: serif">
+                                       Just make a wish it will be there
+                                    </font>
+									
+								</a>
+							</div>
+						</div>
+					
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									
+									<input class="input" id="search" type="text" placeholder="Search here">
+									<button type="submit" id="search_btn" class="search-btn">Search</button>
+								</form>
+							</div>
+						</div>
+					
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								
+              <ul class="header-links pull-right">
+						
+						<li>
+                                <div class="dropdownn">
+                                  <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> My Account</a>
+                                  <div class="dropdownn-content">
+                                    <a href="" data-toggle="modal" data-target="#Modal_login"><i class="fa fa-sign-in" aria-hidden="true" ></i>Login</a>
+                                    <a href="" data-toggle="modal" data-target="#Modal_register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+                                    
+                                  </div>
+                                </div>                               
+                                </li>				
+					</ul>
+								<!-- Cart -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Your Cart</span>
+										<div class="badge qty">0</div>
+									</a>
+									<div class="cart-dropdown"  >
+										<div class="cart-list" id="cart_product">
+										
+											
+										</div>
+										
+										<div class="cart-btns">
+												<a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i>  edit cart</a>
+											
+										</div>
+									</div>
+										
+									</div>
+								<!-- /Cart -->
+
+								<!-- Menu Toogle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		
+		</header>
+	
+		<nav id='navigation'>
+			
+            <div style="font-color:white;" class="container" id="get_category_home">
+                
+            </div>
+				
+		</nav>
+       
+		<div class="modal fade" id="Modal_login" role="dialog">
+                        <div class="modal-dialog">
+													
+                      
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              
+                            </div>
+                            <div class="modal-body">
+                            
+	<div class="wait overlay">
+		<div class="loader"></div>
+	</div>
+	<div class="container-fluid">
+				<!-- row -->
+				
+
+					<div class="login-marg">
+						<!-- Billing Details -->
+						
+						
+						<!-- /Billing Details -->
+						
+						
+								<form onsubmit="return false" id="login" class="login100-form ">
+									<div class="billing-details jumbotron">
+                                    <div class="section-title">
+                                        <h2 class="login100-form-title p-b-49" >Login Here</h2>
+                                    </div>
+                                   
+                                    
+                                    <div class="form-group">
+                                       <label for="email">Email</label>
+                                        <input class="input input-borders" type="email" name="email" placeholder="Email" id="password" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                       <label for="email">Password</label>
+                                        <input class="input input-borders" type="password" name="password" placeholder="password" id="password" required>
+                                    </div>
+                                    
+                                    <div class="text-pad" >
+                                       <a href="#">
+                                           forget password ?
+                                       </a>
+                                        
+                                    </div>
+                                    
+                                        <input class="primary-btn btn-block"   type="submit"  Value="Login">
+                                        
+                                        <div class="panel-footer"><div class="alert alert-danger"><h4 id="e_msg"></h4></div></div>
+                                    
+                                    	
+                                        
+                                    
+
+                                </div>
+                                
+								</form>
+                           
+						<!-- Shiping Details -->
+						
+						<!-- /Shiping Details -->
+
+						<!-- Order notes -->
+						
+						<!-- /Order notes -->
+					</div>
+
+					<!-- Order Details -->
+					
+					<!-- /Order Details -->
+				
+				<!-- /row -->
+			</div>          
+                            </div>
+                            
+                          </div>
+													
+                        </div>
+                      </div>
+                <div class="modal fade" id="Modal_register" role="dialog">
+                        <div class="modal-dialog" style="">
+
+                         
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              
+                            </div>
+                            <div class="modal-body">
+                                <div class="wait overlay">
+        <div class="loader"></div>
+    </div>
+    <style>
+    .input-borders{
+        border-radius:30px;
+    }
+    </style>
+				<!-- row -->
+				
+                <div class="container-fluid">
+					
+						
+						
+						<!-- /Billing Details -->
+						
+								<form id="signup_form" onsubmit="return false" class="login100-form">
+									<div class="billing-details jumbotron">
+                                    <div class="section-title">
+                                        <h2 class="login100-form-title p-b-49" >Register Here</h2>
+                                    </div>
+                                    <div class="form-group ">
+                                    
+                                        <input class="input form-control input-borders" type="text" name="f_name" id="f_name" placeholder="First Name">
+                                    </div>
+                                    <div class="form-group">
+                                    
+                                        <input class="input form-control input-borders" type="text" name="l_name" id="l_name" placeholder="Last Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="input form-control input-borders" type="email" name="email"  placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="input form-control input-borders" type="password" name="password" id="password" placeholder="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="input form-control input-borders" type="password" name="repassword" id="repassword" placeholder="confirm password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="input form-control input-borders" type="text" name="mobile" id="mobile" placeholder="mobile">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="input form-control input-borders" type="text" name="address1" id="address1" placeholder="Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="input form-control input-borders" type="text" name="address2" id="address2" placeholder="City">
+                                    </div>
+                                    
+                                    
+                                    <div style="form-group">
+                                       <input class="primary-btn btn-block"  value="Sign Up" type="submit" name="signup_button">
+                                    </div>
+                                    <div class="text-pad">
+                                    <a href="" data-toggle="modal" data-target="#Modal_login">Already have an Account ? then login</a>
+                                       
+                                    </div>
+                                    
+                                
+								</form>
+                                <div class="login-marg">
+						<!-- Billing Details -->
+						<div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8" id="signup_msg">
+                                    
+
+                                </div>
+                                <!--Alert from signup form-->
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+
+						
+					</div>
+                    </div> 
+
+					
+				
+				<!-- /row -->
+
+			
+          
+                            </div>
+                            
+                          </div>
+
+                        </div>
+                      </div>
+				
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+		<script>
+    
+    (function (global) {
+	if(typeof (global) === "undefined")
+	{
+		throw new Error("window is undefined");
+	}
+    var _hash = "!";
+    var noBackPlease = function () {
+        global.location.href += "#";
+		
+        global.setTimeout(function () {
+            global.location.href += "!";
+        }, 50);
+    };	
+	
+    global.onhashchange = function () {
+        if (global.location.hash !== _hash) {
+            global.location.hash = _hash;
+        }
+    };
+    global.onload = function () {        
+		noBackPlease();
+	
+		document.body.onkeydown = function (e) {
+            var elm = e.target.nodeName.toLowerCase();
+            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                e.preventDefault();
+            }
+            
+            e.stopPropagation();
+        };		
+    };
+})(window);
+</script>
+
+		<div class="section main ">
+		
+			<div class="container">
+				
+				<div class="row">
+					
+					
+					
+									
+                                    
+                                
+                                <div class="col-md-5 col-md-push-2">
+                                <div id="product-main-img">
+                                    <div class="product-preview">
+                                        <img src="product_images/suit1.png" alt="">
+                                    </div>
+
+                                    <div class="product-preview">
+                                        <img src="product_images/suit1.png" alt="">
+                                    </div>
+
+                                    <div class="product-preview">
+                                        <img src="product_images/suit1.png" alt="">
+                                    </div>
+
+                                    <div class="product-preview">
+                                        <img src="product_images/suit1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                                
+                                <div class="col-md-2  col-md-pull-5">
+                                <div id="product-imgs">
+                                    <div class="product-preview">
+                                        <img src="product_images/suit1.png" alt="">
+                                    </div>
+
+                                    <div class="product-preview">
+                                        <img src="product_images/suit1.png" alt="">
+                                    </div>
+
+                                    <div class="product-preview">
+                                        <img src="product_images/suit1.pngg" alt="">
+                                    </div>
+
+                                    <div class="product-preview">
+                                        <img src="product_images/suit1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                                 
+																		
+									
+									
+									
+                                    
+                                   
+                    <div class="col-md-5">
+						<div class="product-details">
+							<h2 class="product-name">Wine Red Suit for men</h2>
+							<div>
+								<div class="product-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<a class="review-link" href="#review-form">10 Review(s) | Add your review</a>
+							</div>
+							<div>
+								<h3 class="product-price">Rs.3499</h3>
+								<span class="product-available">In Stock</span>
+							</div>
+							<p>Red Suit</p>
+
+							<div class="product-options">
+								<label>
+									Size
+									<select class="input-select">
+										<option value="0">XS</option>
+										<option value="0">S</option>
+										<option value="0">M</option>
+										<option value="0">L</option>
+										<option value="0">XL</option>
+									</select>
+								</label>
+								<label>
+									Color
+									<select class="input-select">
+										<option value="0">Black</option>
+										<option value="1">Red</option>
+										<option value="2">Blue</option>
+									</select>
+								</label>
+							</div>
+
+							<div class="add-to-cart">
+								<div class="qty-label">
+									Qty
+									<div class="input-number">
+										
+										<span class="qty-up">+</span>
+										<span class="qty-down">-</span>
+									</div>
+								</div>
+								<div class="btn-group" style="margin-left: 25px; margin-top: 15px">
+								<button class="add-to-cart-btn" pid="16"  id="product" ><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                </div>
+								
+								
+							</div>
+
+							<ul class="product-btns">
+								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
+								<li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
+							</ul>
+
+							<ul class="product-links">
+								<li>Category:</li>
+								<li><a href="#">Electronics</a></li>
+								
+							</ul>
+
+							
+
+						</div>
+					</div>
+									
+					
+				
+					<div class="col-md-12">
+						<div id="product-tab">
+							<!-- product tab nav -->
+							<ul class="tab-nav">
+								
+								<li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
+							</ul>
+							<!-- /product tab nav -->
+
+							<!-- product tab content -->
+							<div class="tab-content">
+								
+
+							
+
+								<!-- tab3  -->
+								<div id="tab3" class=" fade in">
+									<div class="row">
+										<!-- Rating -->
+										<div class="col-md-3">
+											<div id="rating">
+												<div class="rating-avg">
+													<span>4.5</span>
+													<div class="rating-stars">
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star"></i>
+														<i class="fa fa-star-o"></i>
+													</div>
+												</div>
+												<ul class="rating">
+													<li>
+														<div class="rating-stars">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+														</div>
+														<div class="rating-progress">
+															<div style="width: 80%;"></div>
+														</div>
+														<span class="sum">3</span>
+													</li>
+													<li>
+														<div class="rating-stars">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star-o"></i>
+														</div>
+														<div class="rating-progress">
+															<div style="width: 60%;"></div>
+														</div>
+														<span class="sum">2</span>
+													</li>
+													<li>
+														<div class="rating-stars">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star-o"></i>
+															<i class="fa fa-star-o"></i>
+														</div>
+														<div class="rating-progress">
+														<div style="width: 30%;"></div>
+														</div>
+														<span class="sum">1</span>
+													</li>
+													<li>
+														<div class="rating-stars">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star-o"></i>
+															<i class="fa fa-star-o"></i>
+															<i class="fa fa-star-o"></i>
+														</div>
+														<div class="rating-progress">
+															<div></div>
+														</div>
+														<span class="sum">0</span>
+													</li>
+													<li>
+														<div class="rating-stars">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star-o"></i>
+															<i class="fa fa-star-o"></i>
+															<i class="fa fa-star-o"></i>
+															<i class="fa fa-star-o"></i>
+														</div>
+														<div class="rating-progress">
+															<div></div>
+														</div>
+														<span class="sum">0</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<!-- /Rating -->
+
+										<!-- Reviews -->
+										<div class="col-md-6">
+											<div id="reviews">
+												<ul class="reviews">
+													<li>
+														<div class="review-heading">
+															<h5 class="name">John</h5>
+															<p class="date">13 May 2021, 11:00 AM</p>
+															<div class="review-rating">
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+															</div>
+														</div>
+														<div class="review-body">
+															<p>The product is worth the cost</p>
+														</div>
+													</li>
+													<li>
+														<div class="review-heading">
+															<h5 class="name">Johnny</h5>
+															<p class="date">09 May 2021, 7:30 PM</p>
+															<div class="review-rating">
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star-o empty"></i>
+															</div>
+														</div>
+														<div class="review-body">
+															<p>Nice product</p>
+														</div>
+													</li>
+													<li>
+														<div class="review-heading">
+															<h5 class="name">Janardhan</h5>
+															<p class="date">08 May 2021, 12:00 PM</p>
+															<div class="review-rating">
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star"></i>
+																<i class="fa fa-star-o empty"></i>
+																<i class="fa fa-star-o empty"></i>
+																<i class="fa fa-star-o empty"></i>
+															</div>
+														</div>
+														<div class="review-body">
+															<p>The product is very different from the images</p>
+														</div>
+													</li>
+												</ul>
+												<ul class="reviews-pagination">
+													<li class="active">1</li>
+													<li><a href="#">2</a></li>
+													<li><a href="#">3</a></li>
+													<li><a href="#">4</a></li>
+													<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- /Reviews -->
+
+										
+									</div>
+								</div>
+								<!-- /tab3  -->
+							</div>
+							<!-- /product tab content  -->
+						</div>
+					</div>
+					<!-- /product tab -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- Section -->
+		<div class="section main ">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+                    
+					<div class="col-md-12">
+						<div class="section-title text-center">
+							<h3 class="title">Related Products</h3>
+							
+						</div>
+					</div>
+                    	
+								
+				
+                        
+                                <div class='col-md-3 col-xs-6'>
+								<a href='product.php?p=16'><div class='product'>
+									<div class='product-img'>
+										<img src='product_images/suit1.png' style='max-height: 170px;' alt=''>
+										
+									</div></a>
+									<div class='product-body'>
+										<p class='product-category'>Mens Wear</p>
+										<h3 class='product-name header-cart-item-name'><a href='product.php?p=16'>Wine Red Suit for men</a></h3>
+										<h4 class='product-price header-cart-item-info'>Rs.3499</h4>
+										<div class='product-rating'>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+										</div>
+										<div class='product-btns'>
+											<button class='add-to-wishlist'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
+											<button class='add-to-compare'><i class='fa fa-exchange'></i><span class='tooltipp'>add to compare</span></button>
+											<button class='quick-view'><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
+										</div>
+									</div>
+									<div class='add-to-cart'>
+										<button pid='16' id='product' class='add-to-cart-btn block2-btn-towishlist' href='#'><i class='fa fa-shopping-cart'></i> add to cart</button>
+									</div>
+								</div>
+                                </div>
+							
+                        
+			
+				
+                        
+                                <div class='col-md-3 col-xs-6'>
+								<a href='product.php?p=17'><div class='product'>
+									<div class='product-img'>
+										<img src='product_images/suit2.png' style='max-height: 170px;' alt=''>
+										
+									</div></a>
+									<div class='product-body'>
+										<p class='product-category'>Mens Wear</p>
+										<h3 class='product-name header-cart-item-name'><a href='product.php?p=17'>Black Suit for men</a></h3>
+										<h4 class='product-price header-cart-item-info'>Rs.4999</h4>
+										<div class='product-rating'>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+										</div>
+										<div class='product-btns'>
+											<button class='add-to-wishlist'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
+											<button class='add-to-compare'><i class='fa fa-exchange'></i><span class='tooltipp'>add to compare</span></button>
+											<button class='quick-view'><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
+										</div>
+									</div>
+									<div class='add-to-cart'>
+										<button pid='17' id='product' class='add-to-cart-btn block2-btn-towishlist' href='#'><i class='fa fa-shopping-cart'></i> add to cart</button>
+									</div>
+								</div>
+                                </div>
+							
+                        
+			
+				
+                        
+                                <div class='col-md-3 col-xs-6'>
+								<a href='product.php?p=19'><div class='product'>
+									<div class='product-img'>
+										<img src='product_images/starwars.jpg' style='max-height: 170px;' alt=''>
+										
+									</div></a>
+									<div class='product-body'>
+										<p class='product-category'>Mens Wear</p>
+										<h3 class='product-name header-cart-item-name'><a href='product.php?p=19'>Star Wars T-shirt</a></h3>
+										<h4 class='product-price header-cart-item-info'>Rs.699</h4>
+										<div class='product-rating'>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+											<i class='fa fa-star'></i>
+										</div>
+										<div class='product-btns'>
+											<button class='add-to-wishlist'><i class='fa fa-heart-o'></i><span class='tooltipp'>add to wishlist</span></button>
+											<button class='add-to-compare'><i class='fa fa-exchange'></i><span class='tooltipp'>add to compare</span></button>
+											<button class='quick-view'><i class='fa fa-eye'></i><span class='tooltipp'>quick view</span></button>
+										</div>
+									</div>
+									<div class='add-to-cart'>
+										<button pid='19' id='product' class='add-to-cart-btn block2-btn-towishlist' href='#'><i class='fa fa-shopping-cart'></i> add to cart</button>
+									</div>
+								</div>
+                                </div>
+							
+                        
+							
+
+				</div>
+				
+                
+			</div>
+			
+		</div>
+		
+<footer id="footer">
+
+			<div class="section">
+
+				<div class="container">
+	
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">About Us</h3>
+								<p style="color: white;">Regional database management system project by ALANKRIT VYAS and SHIVANG DWIVEDI </p>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>MUJ, Jaipur</a></li>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-6 text-center" style="margin-top:80px;">
+						<h1 style="color: white;">ZIPPIT</h1>
+						<h3 style="color: white;">Just make a wish it will be there</h3>
+						<span class="copyright">
+								
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+						
+							</span>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Categories</h3>
+								<ul class="footer-links">
+									<li><a href="#">Mobiles</a></li>
+									<li><a href="#">Men</a></li>
+									<li><a href="#">Women</a></li>
+									<li><a href="#">Kids</a></li>
+									<li><a href="#">Accessories</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						
+					</div>
+					
+				</div>
+		
+			</div>
+		
+		</footer>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/actions.js"></script>
+		<script src="js/sweetalert.min"></script>
+		<script src="js/jquery.payform.min.js" charset="utf-8"></script>
+    <script src="js/script.js"></script>
+		<script>var c = 0;
+        function menu(){
+          if(c % 2 == 0) {
+            document.querySelector('.cont_drobpdown_menu').className = "cont_drobpdown_menu active";    
+            document.querySelector('.cont_icon_trg').className = "cont_icon_trg active";    
+            c++; 
+              }else{
+            document.querySelector('.cont_drobpdown_menu').className = "cont_drobpdown_menu disable";        
+            document.querySelector('.cont_icon_trg').className = "cont_icon_trg disable";        
+            c++;
+              }
+        }
+           
+		
+</script>
+    <script type="text/javascript">
+		$('.block2-btn-addcart').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+
+		$('.block2-btn-addwishlist').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+			});
+		});
+	</script>
+	
